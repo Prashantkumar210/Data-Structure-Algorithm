@@ -13,32 +13,18 @@ void permutation(string &str, int i, vector<string>&ans){
     for(int j=i; j<str.length(); j++){
 
         swap(str[i], str[j]); 
-
-        cout<<"1."<<str<<" ";
-        cout<<"1."<<i<<j<<" ";
-
-        permutation(str, i+1, ans);
-        cout<<"2."<<str<<" ";
-        cout<<"2."<<i<<j<<" ";
-        
-        cout<<endl;
+        permutation(str, i+1, ans);  
+        swap(str[i], str[j]);       
     }
 }
 
 int main(){
-
-    string str = "abc";  
-
+ 
+    string str = "abc";
     int i = 0;
-    
     vector<string>ans;
-
     permutation(str, i, ans);
 
-
-    // for(int i=0; i<str.length(); i++){
-
-    //     cout<<str<<" ";
-    // }
+    for(i=0; i<ans.size(); i++) cout<<ans[i]<<" ";
     return 0;
 }
